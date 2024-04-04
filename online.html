@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital</title>
+
+    <script>
+        function validate() {
+            var name = 
+                document.forms["queryform"]["name"];
+            var sub = 
+                document.forms["queryform"]["subject"];
+            var email = 
+                document.forms["queryform"]["email"];
+            var date = 
+                document.forms["queryform"]["date"];
+            var time = 
+                document.forms["queryform"]["time"];
+            var speciality = 
+                document.forms["queryform"]["speciality"];
+        
+
+            if (name.value == "") {
+                window.alert("Please enter your name.");
+                name.focus();
+                return false;
+            }
+
+            if (sub.value == "") {
+                window.alert("Please enter a suitable subject line.");
+                sub.focus();
+                return false;
+            }
+
+            if (email.value == "") {
+                window.alert(
+                  "Please enter a valid e-mail address.");
+                email.focus();
+                return false;
+            }
+
+            if (date.value == "") {
+                window.alert(
+                  "Please enter your query.");
+                date.focus();
+                return false;
+            }
+
+            if (time.value == "") {
+                window.alert(
+                  "Please enter your query.");
+                time.focus();
+                return false;
+            }
+
+            if (speciality.value == "") {
+                window.alert(
+                  "Please enter your query.");
+                  speciality.focus();
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+
+<body>
+    <header class="header">
+        <div class="left">
+            <img src="logo.jpg" alt="">
+            <div class="left"><p style="color:hsla(300, 3%, 18%, 0.986); font-family:Copperplate; font-size:30px"><b>Light Blue Heaven</p></div>
+
+        </div>
+
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html" >About us</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+                <li><a href="online.html" class="active">Appointment</a></li>
+                <li><a href="webmasters.html">Webmasters</a></li>
+            </ul>
+
+        </div>
+        <div class="containerapp">
+            <h1 style="color:hsla(224, 94%, 50%, 0.986)">Book an Appointment</h1>
+        </di>
+        <form name="queryform" action="submit.html" 
+                  onsubmit="return validate()" method="put">
+            <div class="form-group">
+                <input type="text" name="name" id="name" placeholder="Your Name" />
+            
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="con" id="con" placeholder="Your Contact Number" />
+               
+              </div>
+
+            <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="Your Email" />
+                
+              </div>
+              <div class="form-group">
+                <input type="text" name="date" id="date" placeholder="DD-MM-YYYY" />
+                <input type="text" name="time" id="time" placeholder="HH-MM-SS" />
+                <input type="text" name="speciality" id="speciality" placeholder="General, Pediatrics, Orthopedics" />
+              </div>
+    
+              <div class="form-group">
+                <button type="Book " class="btn btn-form">Book</button>
+              </div>
+        </form>
+        
+    </header>
+   
+</body>
+
+</html>

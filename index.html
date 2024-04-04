@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital</title>
+
+    <script>
+        function validate() {
+            var name = 
+                document.forms["queryform"]["name"];
+            var sub = 
+                document.forms["queryform"]["subject"];
+            var email = 
+                document.forms["queryform"]["email"];
+            var what = 
+                document.forms["queryform"]["message"];
+
+            if (name.value == "") {
+                window.alert("Please enter your name.");
+                name.focus();
+                return false;
+            }
+
+            if (sub.value == "") {
+                window.alert("Please enter a suitable subject line.");
+                sub.focus();
+                return false;
+            }
+
+            if (email.value == "") {
+                window.alert(
+                  "Please enter a valid e-mail address.");
+                email.focus();
+                return false;
+            }
+
+            if (what.value == "") {
+                window.alert(
+                  "Please enter your query.");
+                what.focus();
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+<body>
+    <header class="header">
+        <div class="left">
+            <img src="logo.jpg" alt="">
+            <div class="left"><p style="color:hsla(300, 3%, 18%, 0.986); font-family:Copperplate; font-size:30px"><b>Light Blue Heaven</p></div>
+
+        </div>
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="aboutus.html">About us</a></li>
+                <li><a href="faq.html">FAQs</a></li>
+                <li><a href="online.html">Appointment</a></li>
+                <li><a href="webmasters.html">Webmasters</a></li>
+            </ul>
+
+        </div>
+        
+    </header>
+    <div class="container">
+        <h1 style="color:hsla(180, 70%, 38%, 0.986)">Having Any Query! Shoot us a message.</h1>
+    </di>
+    <form name="queryform" action="contact.php" 
+              onsubmit="return validate();" method="post">
+        <div class="form-group">
+            <input type="text" name="name" id="name" placeholder="Your Name" />
+        
+        </div>
+        <div class="form-group">
+            <input type="email" name="email" id="email" placeholder="Your Email" />
+            
+          </div>
+          <div class="form-group">
+            <input type="text" name="subject" id="subject" placeholder="Subject" />
+           
+          </div>
+          <div class="form-group">
+            <textarea name="message" rows="5" placeholder="Message"></textarea>
+           
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-form">Submit Query</button>
+          </div>
+    </form>
+
+</body>
+
+</html>
